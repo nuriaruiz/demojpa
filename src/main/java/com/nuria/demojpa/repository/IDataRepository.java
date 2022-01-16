@@ -12,6 +12,7 @@ public interface IDataRepository extends JpaRepository<DataEntity, Long>{
 
     List<DataEntity> findAllByField1(String field1, Pageable pageable);
     List<DataEntity> findAllByField2Containing(String x, Pageable pageable);
+    List<DataEntity> findDataEntityByField1EqualsOrField2EqualsOrField3EqualsOrField4Equals(String field1, String field2, String field3, String field4);
 
     @Query("select m from DataEntity m " +
             "where (:field1 is null or m.field1= :field1) " +
